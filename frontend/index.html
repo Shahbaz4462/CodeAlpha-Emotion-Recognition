@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Industrial Speech Emotion Recognition Engine - Advanced audio analytics and dynamic visualization.">
+    <title>Speech Emotion Recognition Engine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><span class="brand-icon">✧</span> SER Engine</div>
+        <ul class="nav-links">
+            <li><a href="#" data-target="home-section" class="active">Overview</a></li>
+            <li><a href="#" data-target="analyze-section">Live Analyzer</a></li>
+            <li><a href="#" data-target="details-section">Model Architecture</a></li>
+            <li><a href="#" data-target="contact-section">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- HOME SECTION -->
+        <section id="home-section" class="section active-section">
+            <header class="hero">
+                <h1 class="hero-title">Intelligent Speech Emotion<br><span class="text-gradient">Recognition Engine</span></h1>
+                <p class="hero-subtitle">State-of-the-art predictive analytics mapping human emotion from dense audio vectors across multiple languages including Urdu, English, and more.</p>
+                <button id="launch-btn" class="cta-button" data-target="analyze-section">Launch Live Analyzer</button>
+            </header>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in-up delay-1">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-time Live Analysis</h3>
+                    <p>Instantaneous processing of live microphone waveforms through our high-performance ensemble.</p>
+                </div>
+                <div class="feature-card fade-in-up delay-2">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Multilingual Acoustic Support</h3>
+                    <p>Analyzes pure acoustic bounds, enabling emotional detection across global languages (Urdu, etc).</p>
+                </div>
+                <div class="feature-card fade-in-up delay-3">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dynamic Visualization</h3>
+                    <p>Interactive confidence metrics outputting class-balanced probabilities instantly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANALYZE SECTION -->
+        <section id="analyze-section" class="section">
+            <div class="analyze-container">
+                <div class="upload-zone" id="upload-zone">
+                    <div class="live-record-wrapper">
+                        <button id="record-btn" class="record-button">
+                            <span class="record-icon">🎙️</span> Start Live Recording
+                        </button>
+                        <div class="audio-wave hidden" id="audio-wave">
+                            <span class="stroke"></span>
+                            <span class="stroke"></span>
+                            <span class="stroke"></span>
+                            <span class="stroke"></span>
+                            <span class="stroke"></span>
+                        </div>
+                        <p class="record-status" id="record-status">Click to record your voice (Speak in any language)</p>
+                    </div>
+
+                    <div class="divider"><span>OR</span></div>
+
+                    <div class="file-upload-wrapper">
+                        <h2>Drag & Drop Audio</h2>
+                        <p>or click to browse local files (.wav, .mp3)</p>
+                        <input type="file" id="audio-upload" accept="audio/*" hidden>
+                    </div>
+                </div>
+                
+                <div class="results-dashboard hidden" id="results-dashboard">
+                    <h2 class="results-header">Analysis Complete</h2>
+                    <div class="emotion-detected">
+                        <span class="emotion-label">Detected Emotion:</span>
+                        <span class="emotion-value" id="emotion-value">Processing...</span>
+                    </div>
+                    
+                    <div class="confidence-container">
+                        <div class="confidence-header">
+                            <span>Model Confidence Score</span>
+                            <span id="confidence-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="confidence-fill"></div>
+                        </div>
+                    </div>
+                    
+                    <button class="reset-button" id="reset-btn">Analyze Another Audio</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAILS SECTION -->
+        <section id="details-section" class="section">
+            <div class="details-container">
+                <h2 class="section-title">System Architecture</h2>
+                
+                <div class="performance-cards">
+                    <div class="perf-card fade-in-up" style="grid-column: 1 / -1;">
+                        <h4>Validated Model Accuracy</h4>
+                        <div class="perf-score" style="font-size: 4rem;">86.4%</div>
+                        <p>Surpassing Market-Level Standards</p>
+                    </div>
+                </div>
+
+                <div class="architecture-flow">
+                    <h3>How It Works</h3>
+                    <div class="flow-steps">
+                        <div class="flow-step fade-in-up delay-1">
+                            <div class="step-number">1</div>
+                            <h4>Acoustic Extraction</h4>
+                            <p>Raw audio is decomposed into 728 ultra-dense vectors mapping frequency, pitch, and energy boundaries.</p>
+                        </div>
+                        <div class="flow-step fade-in-up delay-2">
+                            <div class="step-number">2</div>
+                            <h4>Temporal Scaling</h4>
+                            <p>Data is robustly standardized, ensuring background noise and volume differences are neutralized.</p>
+                        </div>
+                        <div class="flow-step fade-in-up delay-3">
+                            <div class="step-number">3</div>
+                            <h4>Ensemble Inference</h4>
+                            <p>Three parallel machine learning trees process the feature vectors simultaneously to map emotional contours.</p>
+                        </div>
+                        <div class="flow-step fade-in-up delay-4">
+                            <div class="step-number">4</div>
+                            <h4>Majority Voting</h4>
+                            <p>The system mathematically fuses the predictions to output a final, highly confident emotional state.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact-section" class="section">
+            <div class="contact-container">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="contact-subtitle">Have questions about the project or want to collaborate? Reach out via the details below.</p>
+                
+                <div class="contact-info-cards">
+                    <div class="contact-card fade-in-up delay-1">
+                        <div class="contact-icon">✉️</div>
+                        <h4>Email Address</h4>
+                        <div class="contact-box">
+                            <a href="mailto:mahmadramzan06@gmail.com" class="contact-link email-link">mahmadramzan06@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card fade-in-up delay-2">
+                        <div class="contact-icon">📱</div>
+                        <h4>Phone Number</h4>
+                        <div class="contact-box">
+                            <a href="tel:03099902068" class="contact-link">0309 9902068</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3>Send a Direct Message</h3>
+                    <form class="contact-form" id="contact-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="input-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project Collaboration">
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Hello, I'd like to discuss..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 SER Project Team. Academic Alignment & Copyright.</p>
+    </footer>
+
+    <script src="js/engine.js"></script>
+</body>
+</html>
