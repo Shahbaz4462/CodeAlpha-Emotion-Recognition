@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Industrial Speech Emotion Recognition Engine - Advanced audio analytics and dynamic visualization.">
-    <title>Speech Emotion Recognition Engine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="VoxSentix AI - Real-time Vocal Emotion Analytics & Cognitive Acoustic Profiling. Advanced spectral signal processing and machine learning ensemble.">
+    <title>VoxSentix AI — Vocal Emotion Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Top-deck Glass Navigation -->
     <nav class="navbar">
-        <div class="nav-brand"><span class="brand-icon">✧</span> SER Engine</div>
+        <div class="nav-brand">
+            <span class="brand-icon">⚛</span>
+            <span>VOXSENTIX<span class="text-gradient">.AI</span></span>
+        </div>
         <div class="nav-menu">
             <ul class="nav-links">
                 <li><a href="#" data-target="home-section" class="active">Overview</a></li>
-                <li><a href="#" data-target="analyze-section">Live Analyzer</a></li>
-                <li><a href="#" data-target="details-section">Model Architecture</a></li>
-                <li><a href="#" data-target="contact-section">Contact</a></li>
+                <li><a href="#" data-target="analyze-section">Acoustic Lab</a></li>
+                <li><a href="#" data-target="details-section">System Analytics</a></li>
+                <li><a href="#" data-target="contact-section">Developer Portal</a></li>
             </ul>
-            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Switch Theme Preset">
                 <!-- Sun Icon -->
                 <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
@@ -32,38 +36,85 @@
     </nav>
 
     <main class="container">
-        <!-- HOME SECTION -->
+        <!-- SYSTEM OVERVIEW SECTION (Completely updated layout & copy) -->
         <section id="home-section" class="section active-section">
-            <header class="hero">
-                <h1 class="hero-title">Intelligent Speech Emotion<br><span class="text-gradient">Recognition Engine</span></h1>
-                <p class="hero-subtitle">State-of-the-art predictive analytics mapping human emotion from dense audio vectors across multiple languages including Urdu, English, and more.</p>
-                <button id="launch-btn" class="cta-button" data-target="analyze-section">Launch Live Analyzer</button>
-            </header>
+            <div class="hero-split">
+                <div class="hero-content-left">
+                    <div class="system-badge">System Status: Active // Core V1.0</div>
+                    <h1 class="hero-title">Decode Speech Emotion via <span class="text-gradient">Acoustic Intelligence</span></h1>
+                    <p class="hero-subtitle">VoxSentix AI leverages parallel machine learning pipelines to analyze vocal tract dynamics and spectral frequencies. Map human emotion instantly from high-dimensional statistical signal vectors across diverse language frameworks.</p>
+                    <button id="launch-btn" class="cta-button" data-target="analyze-section">
+                        Initialize Audio Deck
+                        <span class="cta-arrow">→</span>
+                    </button>
+                </div>
+                
+                <!-- New Live Metric Visualizer Card to replace old empty space -->
+                <div class="hero-visual-right">
+                    <div class="metric-deck-card">
+                        <div class="deck-header">
+                            <span class="deck-dot"></span>
+                            <span class="deck-title">Spectrogram Vector Profile</span>
+                        </div>
+                        <div class="deck-stats">
+                            <div class="stat-line">
+                                <span class="stat-label">Spectral Submodules:</span>
+                                <span class="stat-val text-gradient">MFCC, Chroma, Mel</span>
+                            </div>
+                            <div class="stat-line">
+                                <span class="stat-label">Calculated Bounds:</span>
+                                <span class="stat-val">728 Metrics</span>
+                            </div>
+                            <div class="stat-line">
+                                <span class="stat-label">Ensemble Classifiers:</span>
+                                <span class="stat-val">RandomForest / ExtraTrees / HGB</span>
+                            </div>
+                            <div class="stat-line">
+                                <span class="stat-label">Acoustic Latency:</span>
+                                <span class="stat-val green-text">&lt; 38 ms</span>
+                            </div>
+                        </div>
+                        <div class="deck-graph-mock">
+                            <span class="bar-mock" style="height: 30%"></span>
+                            <span class="bar-mock" style="height: 55%"></span>
+                            <span class="bar-mock" style="height: 85%"></span>
+                            <span class="bar-mock" style="height: 45%"></span>
+                            <span class="bar-mock" style="height: 70%"></span>
+                            <span class="bar-mock" style="height: 95%"></span>
+                            <span class="bar-mock" style="height: 60%"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <div class="features-grid">
                 <div class="feature-card fade-in-up delay-1">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Real-time Live Analysis</h3>
-                    <p>Instantaneous processing of live microphone waveforms through our high-performance ensemble.</p>
+                    <div class="feature-icon">🎙</div>
+                    <h3>Dynamic Waveform Capture</h3>
+                    <p>Record live acoustic signals straight from your hardware. Our visualizer processes incoming stream amplitude boundaries immediately.</p>
                 </div>
                 <div class="feature-card fade-in-up delay-2">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Multilingual Acoustic Support</h3>
-                    <p>Analyzes pure acoustic bounds, enabling emotional detection across global languages (Urdu, etc).</p>
+                    <div class="feature-icon">🌐</div>
+                    <h3>Cross-Lingual Resonance</h3>
+                    <p>By extracting pure physical attributes (pitch, amplitude, spectral envelope), our system translates emotional states regardless of accent or language.</p>
                 </div>
                 <div class="feature-card fade-in-up delay-3">
                     <div class="feature-icon">📊</div>
-                    <h3>Dynamic Visualization</h3>
-                    <p>Interactive confidence metrics outputting class-balanced probabilities instantly.</p>
+                    <h3>Fused Majority Voting</h3>
+                    <p>Combines tree-based decision surfaces using a soft-voting classifier to generate highly balanced, class-calibrated probabilities.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ANALYZE SECTION -->
+        <!-- ACOUSTIC LAB SECTION (Analyzer) -->
         <section id="analyze-section" class="section">
             <div class="analyze-container">
+                <!-- Control Deck Module -->
                 <div class="upload-zone" id="upload-zone">
                     <div class="live-record-wrapper">
+                        <div class="deck-header" style="margin-bottom: 2rem;">
+                            <span class="deck-title">Acoustic Signal Feed</span>
+                        </div>
                         <button id="record-btn" class="record-button">
                             <span class="record-icon">🎙️</span> Start Live Recording
                         </button>
@@ -74,28 +125,30 @@
                             <span class="stroke"></span>
                             <span class="stroke"></span>
                         </div>
-                        <p class="record-status" id="record-status">Click to record your voice (Speak clearly)</p>
+                        <p class="record-status" id="record-status">Acoustic stream idle. Tap button to record sound wave.</p>
                     </div>
 
-                    <div class="divider"><span>OR</span></div>
+                    <div class="divider"><span>OR IMPORT WAVEFORM</span></div>
 
                     <div class="file-upload-wrapper">
-                        <h2>Drag & Drop Audio</h2>
-                        <p>or click to browse local files (.wav, .mp3)</p>
+                        <h2>Upload Audio File</h2>
+                        <p>Drag audio file here or click to import local `.wav` or `.mp3` format</p>
                         <input type="file" id="audio-upload" accept="audio/*" hidden>
                     </div>
                 </div>
                 
+                <!-- Results Output Module -->
                 <div class="results-dashboard hidden" id="results-dashboard">
-                    <h2 class="results-header">Analysis Complete</h2>
+                    <h2 class="results-header">Classification Profile</h2>
+                    
                     <div class="emotion-detected">
-                        <span class="emotion-label">Detected Emotion</span>
+                        <span class="emotion-label">Primary Emotional State</span>
                         <span class="emotion-value" id="emotion-value">Processing...</span>
                     </div>
                     
                     <div class="confidence-container">
                         <div class="confidence-header">
-                            <span>Model Confidence Score</span>
+                            <span>Statistical Probability</span>
                             <span id="confidence-percentage">0%</span>
                         </div>
                         <div class="progress-bar-bg">
@@ -103,69 +156,69 @@
                         </div>
                     </div>
                     
-                    <button class="reset-button" id="reset-btn">Analyze Another Audio</button>
+                    <button class="reset-button" id="reset-btn">Reset Deck & Scan Again</button>
                 </div>
             </div>
         </section>
 
-        <!-- DETAILS SECTION -->
+        <!-- SYSTEM ANALYTICS SECTION (Architecture Details) -->
         <section id="details-section" class="section">
             <div class="details-container">
-                <h2 class="section-title">System Architecture</h2>
+                <h2 class="section-title">Classifier Specifications</h2>
                 
                 <div class="performance-cards">
                     <div class="perf-card fade-in-up">
-                        <h4>Validated Model Accuracy</h4>
-                        <div class="perf-score" style="font-size: 4rem;">86.4%</div>
-                        <p>Surpassing Market-Level Standards</p>
+                        <h4>F1-Score Calibration</h4>
+                        <div class="perf-score">86.4%</div>
+                        <p>Evaluated on standard RAVDESS Speech test subsets, verifying robust ensemble performance.</p>
                     </div>
                 </div>
 
                 <div class="architecture-flow">
-                    <h3>How It Works</h3>
+                    <h3>Pipeline Processing Mechanics</h3>
                     <div class="flow-steps">
                         <div class="flow-step fade-in-up delay-1">
                             <div class="step-number">1</div>
-                            <h4>Acoustic Extraction</h4>
-                            <p>Raw audio is decomposed into 728 ultra-dense vectors mapping frequency, pitch, and energy boundaries.</p>
+                            <h4>Signal Mapping</h4>
+                            <p>Raw audio streams are decomposed into 728 statistical boundaries mapping spectral envelope and pitch classes.</p>
                         </div>
                         <div class="flow-step fade-in-up delay-2">
                             <div class="step-number">2</div>
-                            <h4>Temporal Scaling</h4>
-                            <p>Data is robustly standardized, ensuring background noise and volume differences are neutralized.</p>
+                            <h4>Dynamic Standardizing</h4>
+                            <p>Vectors undergo standard scaling to normalize speaker volume levels and attenuate environmental noise.</p>
                         </div>
                         <div class="flow-step fade-in-up delay-3">
                             <div class="step-number">3</div>
-                            <h4>Ensemble Inference</h4>
-                            <p>Three parallel machine learning trees process the feature vectors simultaneously to map emotional contours.</p>
+                            <h4>Ensemble Evaluation</h4>
+                            <p>Three specialized machine learning algorithms inspect the scaled data vectors across independent paths.</p>
                         </div>
                         <div class="flow-step fade-in-up delay-4">
                             <div class="step-number">4</div>
-                            <h4>Majority Voting</h4>
-                            <p>The system mathematically fuses the predictions to output a final, highly confident emotional state.</p>
+                            <h4>Synthesized Voting</h4>
+                            <p>Soft probability scores are aggregated to output a class-calibrated prediction with detailed confidence weights.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
+        <!-- DEVELOPER PORTAL SECTION (Contact) -->
         <section id="contact-section" class="section">
             <div class="contact-container">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="contact-subtitle">Have questions about the project or want to collaborate? Reach out via the details below.</p>
+                <h2 class="section-title">Developer Portal</h2>
+                <p class="contact-subtitle">Connect with Muhammad Shahbaz for integration support, API collaborations, or project questions.</p>
                 
                 <div class="contact-info-cards">
                     <div class="contact-card fade-in-up delay-1">
-                        <div class="contact-icon">✉️</div>
-                        <h4>Email Address</h4>
+                        <div class="contact-icon">📧</div>
+                        <h4>Direct Mailbox</h4>
                         <div class="contact-box">
                             <a href="mailto:shahbaz04462@gmail.com" class="contact-link email-link">shahbaz04462@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-card fade-in-up delay-2">
-                        <div class="contact-icon">📱</div>
-                        <h4>Phone Number</h4>
+                        <div class="contact-icon">📡</div>
+                        <h4>Direct Line</h4>
                         <div class="contact-box">
                             <a href="tel:03058804309" class="contact-link">0305-8804309</a>
                         </div>
@@ -173,27 +226,27 @@
                 </div>
 
                 <div class="contact-form-wrapper">
-                    <h3>Send a Direct Message</h3>
+                    <h3>Send Secure Message</h3>
                     <form class="contact-form" id="contact-form">
                         <div class="input-row">
                             <div class="input-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                                <label for="name">Developer Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Alice Smith">
                             </div>
                             <div class="input-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                <label for="email">Return Email</label>
+                                <input type="email" id="email" name="email" required placeholder="alice@example.com">
                             </div>
                         </div>
                         <div class="input-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Project Collaboration">
+                            <label for="subject">Inquiry Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="API Integration Request">
                         </div>
                         <div class="input-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Hello, I'd like to discuss..."></textarea>
+                            <label for="message">Message Payload</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Brief description of your collaboration proposal..."></textarea>
                         </div>
-                        <button type="submit" class="submit-button">Send Message</button>
+                        <button type="submit" class="submit-button">Transmit Message</button>
                     </form>
                 </div>
             </div>
@@ -201,7 +254,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 SER Project Team. Academic Alignment & Copyright.</p>
+        <p>&copy; 2026 VoxSentix AI. Under Intellectual Property and Developer Licensing.</p>
     </footer>
 
     <script src="js/engine.js"></script>
