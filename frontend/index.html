@@ -11,12 +11,24 @@
 <body>
     <nav class="navbar">
         <div class="nav-brand"><span class="brand-icon">✧</span> SER Engine</div>
-        <ul class="nav-links">
-            <li><a href="#" data-target="home-section" class="active">Overview</a></li>
-            <li><a href="#" data-target="analyze-section">Live Analyzer</a></li>
-            <li><a href="#" data-target="details-section">Model Architecture</a></li>
-            <li><a href="#" data-target="contact-section">Contact</a></li>
-        </ul>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#" data-target="home-section" class="active">Overview</a></li>
+                <li><a href="#" data-target="analyze-section">Live Analyzer</a></li>
+                <li><a href="#" data-target="details-section">Model Architecture</a></li>
+                <li><a href="#" data-target="contact-section">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                <!-- Sun Icon -->
+                <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+                </svg>
+                <!-- Moon Icon -->
+                <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                </svg>
+            </button>
+        </div>
     </nav>
 
     <main class="container">
@@ -62,7 +74,7 @@
                             <span class="stroke"></span>
                             <span class="stroke"></span>
                         </div>
-                        <p class="record-status" id="record-status">Click to record your voice (Speak in any language)</p>
+                        <p class="record-status" id="record-status">Click to record your voice (Speak clearly)</p>
                     </div>
 
                     <div class="divider"><span>OR</span></div>
@@ -77,7 +89,7 @@
                 <div class="results-dashboard hidden" id="results-dashboard">
                     <h2 class="results-header">Analysis Complete</h2>
                     <div class="emotion-detected">
-                        <span class="emotion-label">Detected Emotion:</span>
+                        <span class="emotion-label">Detected Emotion</span>
                         <span class="emotion-value" id="emotion-value">Processing...</span>
                     </div>
                     
@@ -102,7 +114,7 @@
                 <h2 class="section-title">System Architecture</h2>
                 
                 <div class="performance-cards">
-                    <div class="perf-card fade-in-up" style="grid-column: 1 / -1;">
+                    <div class="perf-card fade-in-up">
                         <h4>Validated Model Accuracy</h4>
                         <div class="perf-score" style="font-size: 4rem;">86.4%</div>
                         <p>Surpassing Market-Level Standards</p>
@@ -148,14 +160,14 @@
                         <div class="contact-icon">✉️</div>
                         <h4>Email Address</h4>
                         <div class="contact-box">
-                            <a href="mailto:mahmadramzan06@gmail.com" class="contact-link email-link">mahmadramzan06@gmail.com</a>
+                            <a href="mailto:shahbaz04462@gmail.com" class="contact-link email-link">shahbaz04462@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-card fade-in-up delay-2">
                         <div class="contact-icon">📱</div>
                         <h4>Phone Number</h4>
                         <div class="contact-box">
-                            <a href="tel:03099902068" class="contact-link">0309 9902068</a>
+                            <a href="tel:03058804309" class="contact-link">0305-8804309</a>
                         </div>
                     </div>
                 </div>

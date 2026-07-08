@@ -1,10 +1,34 @@
 /**
  * Speech Emotion Recognition - Frontend Logic Engine
- * Handles SPA navigation, mock file processing, live recording simulation, and dynamic UI updates.
+ * Handles SPA navigation, theme switching, mock file processing, live recording simulation, and dynamic UI updates.
  */
 
+// --- CONFIGURATION ---
+// To receive contact form emails directly to shahbaz04462@gmail.com on Vercel:
+// 1. Go to https://formspree.io/ and register a free account.
+// 2. Create a form targeting your email (shahbaz04462@gmail.com).
+// 3. Paste the Form ID you receive from Formspree in the variable below:
+const FORMSPREE_FORM_ID = ""; // e.g. "xoqgyyee"
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation Routing
+    // --- Theme Switcher Logic ---
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    
+    // Set initial theme
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+
+    // --- Navigation Routing ---
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('.section');
     const launchBtn = document.getElementById('launch-btn');
@@ -38,13 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    if(launchBtn) {
+    if (launchBtn) {
         launchBtn.addEventListener('click', () => {
             navigateTo('analyze-section');
         });
     }
 
-    // File Upload & Analysis Logic
+    // --- File Upload & Analysis Logic ---
     const uploadZone = document.getElementById('upload-zone');
     const audioUpload = document.getElementById('audio-upload');
     const fileUploadWrapper = document.querySelector('.file-upload-wrapper');
@@ -61,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isRecording = false;
 
     // Live Record Event
-    if(recordBtn) {
+    if (recordBtn) {
         recordBtn.addEventListener('click', (e) => {
             e.stopPropagation(); // prevent triggering upload
             if (!isRecording) {
@@ -70,9 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 recordBtn.classList.add('recording');
                 recordBtn.innerHTML = '<span class="record-icon">🛑</span> Stop Recording';
                 recordStatus.textContent = "Listening live... (Speak clearly)";
-                recordStatus.style.color = "var(--primary-color)";
+                recordStatus.style.color = "var(--danger-color)";
                 recordStatus.style.fontWeight = "600";
-                if(audioWave) audioWave.classList.remove('hidden');
+                if (audioWave) audioWave.classList.remove('hidden');
             } else {
                 // Stop Recording and Analyze
                 isRecording = false;
@@ -81,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 recordStatus.textContent = "Audio captured. Processing...";
                 recordStatus.style.color = "var(--text-muted)";
                 recordStatus.style.fontWeight = "400";
-                if(audioWave) audioWave.classList.add('hidden');
+                if (audioWave) audioWave.classList.add('hidden');
                 
                 // Slight delay then simulate processing
                 setTimeout(() => {
@@ -93,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Prevent default drag behaviors
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        if(uploadZone) uploadZone.addEventListener(eventName, preventDefaults, false);
+        if (uploadZone) uploadZone.addEventListener(eventName, preventDefaults, false);
     });
 
     function preventDefaults(e) {
@@ -103,19 +127,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Highlight drop zone
     ['dragenter', 'dragover'].forEach(eventName => {
-        if(uploadZone) uploadZone.addEventListener(eventName, () => {
+        if (uploadZone) uploadZone.addEventListener(eventName, () => {
             uploadZone.classList.add('dragover');
         }, false);
     });
 
     ['dragleave', 'drop'].forEach(eventName => {
-        if(uploadZone) uploadZone.addEventListener(eventName, () => {
+        if (uploadZone) uploadZone.addEventListener(eventName, () => {
             uploadZone.classList.remove('dragover');
         }, false);
     });
 
     // Handle dropped files
-    if(uploadZone) {
+    if (uploadZone) {
         uploadZone.addEventListener('drop', (e) => {
             const dt = e.dataTransfer;
             const files = dt.files;
@@ -124,15 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Handle clicked upload
-    if(fileUploadWrapper) {
+    if (fileUploadWrapper) {
         fileUploadWrapper.addEventListener('click', () => {
-            if(!isRecording) {
+            if (!isRecording) {
                 audioUpload.click();
             }
         });
     }
 
-    if(audioUpload) {
+    if (audioUpload) {
         audioUpload.addEventListener('change', function() {
             handleFiles(this.files);
         });
@@ -157,14 +181,14 @@ document.addEventListener('DOMContentLoaded', () => {
         uploadZone.classList.add('hidden');
         resultsDashboard.classList.remove('hidden');
         
-        emotionValue.textContent = 'Extracting Dense Features...';
+        emotionValue.textContent = 'Extracting Features...';
         emotionValue.style.color = 'var(--text-muted)';
         confidenceFill.style.width = '0%';
         confidenceText.textContent = '0%';
 
         // Simulate API Delay
         setTimeout(() => {
-            emotionValue.textContent = 'Running Multilingual Ensemble...';
+            emotionValue.textContent = 'Ensemble Inference...';
             confidenceFill.style.width = '45%';
             confidenceText.textContent = '45%';
             
@@ -186,20 +210,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Reset Analyzer
-    if(resetBtn) {
+    if (resetBtn) {
         resetBtn.addEventListener('click', () => {
             resultsDashboard.classList.add('hidden');
             uploadZone.classList.remove('hidden');
-            if(audioUpload) audioUpload.value = ''; // clear input
-            if(recordStatus) {
-                recordStatus.textContent = "Click to record your voice (Speak in any language)";
+            if (audioUpload) audioUpload.value = ''; // clear input
+            if (recordStatus) {
+                recordStatus.textContent = "Click to record your voice (Speak clearly)";
             }
         });
     }
 
-    // Contact Form Submission
+    // --- Contact Form Submission Handler ---
     const contactForm = document.getElementById('contact-form');
-    if(contactForm) {
+    if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('.submit-button');
@@ -207,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             btn.textContent = 'Sending Message...';
             btn.disabled = true;
-            btn.style.background = 'var(--text-muted)';
+            btn.style.opacity = '0.7';
             
             const formData = new FormData(contactForm);
             const jsonObject = {};
@@ -215,7 +239,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 jsonObject[key] = value;
             });
             
-            fetch("/api/contact", {
+            // Route form target: Use Formspree if a Form ID is provided, otherwise fall back to local Flask API
+            const useFormspree = FORMSPREE_FORM_ID && FORMSPREE_FORM_ID.trim() !== "";
+            const requestUrl = useFormspree 
+                ? `https://formspree.io/f/${FORMSPREE_FORM_ID.trim()}`
+                : "/api/contact";
+                
+            fetch(requestUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -223,9 +253,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(jsonObject)
             })
-            .then(response => response.json())
+            .then(response => {
+                if (response.ok) {
+                    return response.json().catch(() => ({ success: true }));
+                } else {
+                    throw new Error("Form submission failed");
+                }
+            })
             .then(data => {
-                if (data.success) {
+                // Formspree API returns simple ok status, local backend returns { success: true }
+                if (data.success || useFormspree) {
                     btn.textContent = 'Message Sent Successfully!';
                     btn.style.background = 'var(--success-color)';
                     contactForm.reset();
@@ -237,7 +274,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.disabled = false;
-                    btn.style.background = 'linear-gradient(135deg, var(--text-main) 0%, #334155 100%)';
+                    btn.style.opacity = '1';
+                    btn.style.background = ''; // restore CSS gradient
                 }, 3000);
             })
             .catch(error => {
@@ -247,7 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.disabled = false;
-                    btn.style.background = 'linear-gradient(135deg, var(--text-main) 0%, #334155 100%)';
+                    btn.style.opacity = '1';
+                    btn.style.background = ''; // restore CSS gradient
                 }, 3000);
             });
         });
