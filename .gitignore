@@ -1,0 +1,8 @@
+ser_env/
+.venv/
+venv/
+__pycache__/
+*.pyc
+messages.json
+.idea/
+.vscode/
